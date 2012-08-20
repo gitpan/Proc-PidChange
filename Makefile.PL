@@ -27,12 +27,11 @@ my %WriteMakefileArgs = (
   "NAME" => "Proc::PidChange",
   "PREREQ_PM" => {
     "Exporter" => 0,
-    "POSIX::AtFork" => 0,
     "parent" => 0,
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.001",
+  "VERSION" => "0.002",
   "test" => {
     "TESTS" => "t/*.t"
   }

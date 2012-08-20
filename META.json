@@ -37,9 +37,11 @@
          }
       },
       "runtime" : {
+         "recommends" : {
+            "POSIX::AtFork" : "0"
+         },
          "requires" : {
             "Exporter" : "0",
-            "POSIX::AtFork" : "0",
             "parent" : "0",
             "perl" : "5.006",
             "strict" : "0",
@@ -59,7 +61,7 @@
    "provides" : {
       "Proc::PidChange" : {
          "file" : "lib/Proc/PidChange.pm",
-         "version" : "0.001"
+         "version" : "0.002"
       }
    },
    "release_status" : "stable",
@@ -75,7 +77,7 @@
          "web" : "https://github.com/melo/Proc-PidChange"
       }
    },
-   "version" : "0.001",
+   "version" : "0.002",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
@@ -357,7 +359,18 @@
          {
             "class" : "Dist::Zilla::Plugin::Clean",
             "name" : "@Author::MELO/Clean",
-            "version" : "0.06"
+            "version" : "0.07"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Prereqs",
+            "config" : {
+               "Dist::Zilla::Plugin::Prereqs" : {
+                  "phase" : "runtime",
+                  "type" : "recommends"
+               }
+            },
+            "name" : "Recommends",
+            "version" : "4.300021"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",
